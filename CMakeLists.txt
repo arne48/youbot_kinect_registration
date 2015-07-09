@@ -29,18 +29,21 @@ include_directories(${catkin_INCLUDE_DIRS} ${Eigen_INCLUDE_DIRS} ${pcl_ros_INCLU
 
 
 add_executable(registration src/registration.cpp)
+add_dependencies(registration brics_actuator_generate_messages_cpp)
  target_link_libraries(registration
    ${catkin_LIBRARIES}
    ${Boost_LIBRARIES}
  )
 
 add_executable(youbot_kinect_registration src/youbot_kinect_registration.cpp)
+add_dependencies(youbot_kinect_registration brics_actuator_generate_messages_cpp)
  target_link_libraries(youbot_kinect_registration
    ${catkin_LIBRARIES}
    ${Boost_LIBRARIES}
  )
 
 add_executable(pattern_detection_test src/pattern_detection_test.cpp)
+add_dependencies(pattern_detection_test brics_actuator_generate_messages_cpp)
  target_link_libraries(pattern_detection_test
    ${catkin_LIBRARIES}
  )
